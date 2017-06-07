@@ -4,6 +4,10 @@ const deepEquals = ( a, b ) => {
     if ( R.type ( a ) !== R.type ( b ) ) {
         return false;
     }
+    
+    if ( R.type ( a ) === 'Null' ) {
+        return true;
+    }
 
     if ( R.type ( a ) === 'Object' ) {
         const A = R.clone ( a ), B = R.clone ( b );
